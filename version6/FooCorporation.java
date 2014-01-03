@@ -2,26 +2,26 @@ class FooCorporation {
 
 	public static void legalWage(double wage) { // Function to verify if worker is being paid a legal wage
 		if (wage < 8) {
-			System.out.println("Under minimum wage!");
+			System.out.println("ERROR: Under State-Mandated Minimum Wage!");
 		}
 	}
 
 	public static void illegalOvertime(double hoursWorked) {
 		if (hoursWorked > 60) {
-			System.out.println("Illegal overtime!");
+			System.out.println("ERROR: Over Sixty Hours Worked");  // Outputs error message
 		}
 	}
 
 	public static void wageCalculation(double wage, double hoursWorked) {
 		double totalPay;
-		if (hoursWorked > 40) {
-			double hoursOverForty = hoursWorked - 40;
-			totalPay = 1.5 * wage * hoursOverForty + wage * 40;
+		if (hoursWorked > 40) { // Checks if hoursWorked exceeds forty hours and hence need to calculate overtime
+			double hoursOverForty = hoursWorked - 40; // Find total number of hours over forty
+			totalPay = 1.5 * wage * hoursOverForty + wage * 40; // Calculate total pay taking into account overtime hours
 		}
 		else {
-			totalPay = wage * hoursWorked;
+			totalPay = wage * hoursWorked; // Compute wages normally
 		}
-		System.out.println(totalPay);
+		System.out.println(totalPay);  // Output string of weekly pay of given employee
 	}
 
 	public static void finalCalculation(double wage, double hoursWorked) {
