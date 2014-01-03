@@ -13,12 +13,21 @@ class FooCorporation {
 	}
 
 	public static void wageCalculation(double wage, double hoursWorked) {
-
+		double totalPay;
+		if (hoursWorked > 40) {
+			double hoursOverForty = hoursWorked - 40;
+			totalPay = 1.5 * wage * hoursOverForty + wage * 40;
+		}
+		else {
+			totalPay = wage * hoursWorked;
+		}
+		System.out.println(totalPay);
 	}
 
 	public static void finalCalculation(double wage, double hoursWorked) {
 		legalWage(wage);
 		illegalOvertime(hoursWorked);
+		wageCalculation(wage, hoursWorked);
 	}
 
 	public static void main(String[] args) {
