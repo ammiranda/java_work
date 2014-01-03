@@ -22,13 +22,9 @@ class FooCorporation {
 		}
 	}
 
-	public static void finalCalculation(double wage, double hoursWorked) {
-		wageCalculation(wage, hoursWorked);
-	}
-
 	public static void main(String[] args) {
-		finalCalculation(7.5, 35);
-		finalCalculation(8.20, 47);
-		finalCalculation(10.0, 73);
+		wageCalculation(7.5, 35);
+		wageCalculation(8.20, 47);
+		wageCalculation(10.0, 73);
 	}
 }
